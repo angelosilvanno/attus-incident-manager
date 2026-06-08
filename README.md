@@ -188,4 +188,4 @@ docs/NOTA_TECNICA.md
 
 ## 👷 Autor
 
-**Ângelo Silvano** - *Desenvolvedor Full Stack* - [angelosilvanno](https://github.com//angelosilvanno).
+**Ângelo Silvano** - *Desenvolvedor Full Stack* - [angelosilvanno](https://github.com/angelosilvanno).
