@@ -46,7 +46,7 @@ docker --version
 
 ```bash
 git clone https://github.com/angelosilvanno/attus-incident-manager.git
-cd attus-taskflow
+cd  attus-incident-manager
 ```
 
 #### 2. Iniciar o banco de dados
