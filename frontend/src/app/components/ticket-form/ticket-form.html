@@ -1,1 +1,78 @@
-<p>ticket-form works!</p>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-white py-3 border-bottom">
+          <h4 class="mb-0 text-primary">
+            <i class="bi bi-file-earmark-plus me-2"></i>
+            {{ isEdition ? 'Editar' : 'Registrar Novo' }} Incidente
+          </h4>
+        </div>
+        
+        <div class="card-body p-4">
+          <form [formGroup]="ticketForm" (ngSubmit)="salvar()">
+            <!-- Campo de Título -->
+            <div class="mb-3">
+              <label class="form-label fw-bold">Título do Incidente</label>
+              <input type="text" 
+                     class="form-control" 
+                     formControlName="title" 
+                     placeholder="Ex: Lentidão no banco de dados"
+                     [class.is-invalid]="ticketForm.get('title')?.invalid && ticketForm.get('title')?.touched">
+              <div class="invalid-feedback">O título deve ter pelo menos 5 caracteres.</div>
+            </div>
+
+            <!-- Campo de Descrição -->
+            <div class="mb-3">
+              <label class="form-label fw-bold">Descrição Detalhada</label>
+              <textarea class="form-control" 
+                        formControlName="description" 
+                        rows="4" 
+                        placeholder="Descreva o que ocorreu e os logs observados..."
+                        [class.is-invalid]="ticketForm.get('description')?.invalid && ticketForm.get('description')?.touched"></textarea>
+              <div class="invalid-feedback">A descrição é obrigatória.</div>
+            </div>
+
+            <div class="row">
+              <!-- Campo de Prioridade -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Prioridade</label>
+                <select class="form-select" formControlName="priority">
+                  <option value="LOW">Baixa</option>
+                  <option value="MEDIUM">Média</option>
+                  <option value="HIGH">Alta</option>
+                  <option value="CRITICAL">Crítica</option>
+                </select>
+              </div>
+
+              <!-- Campo de Status (Só aparece na edição) -->
+              <div class="col-md-6 mb-3" *ngIf="isEdition">
+                <label class="form-label fw-bold">Status Atual</label>
+                <select class="form-select" formControlName="status">
+                  <option value="OPEN">Aberto</option>
+                  <option value="IN_PROGRESS">Em Atendimento</option>
+                  <option value="RESOLVED">Resolvido</option>
+                  <option value="CLOSED">Encerrado</option>
+                </select>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Botões de Ação -->
+            <div class="d-flex gap-2">
+              <button type="submit" 
+                      class="btn btn-primary px-4" 
+                      [disabled]="ticketForm.invalid">
+                <i class="bi bi-save me-2"></i> Salvar Incidente
+              </button>
+              <a routerLink="/" class="btn btn-outline-secondary px-4">
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
