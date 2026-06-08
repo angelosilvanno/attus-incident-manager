@@ -1,7 +1,8 @@
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2><i class="bi bi-list-task"></i> Gestão de Incidentes</h2>
-    <button class="btn btn-primary">
+    
+    <button class="btn btn-primary" routerLink="/tickets/novo">
       <i class="bi bi-plus-circle"></i> Novo Chamado
     </button>
   </div>
@@ -35,7 +36,7 @@
             </td>
             <td>{{ ticket.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
             <td class="text-end">
-              <button class="btn btn-sm btn-outline-secondary me-2">
+              <button class="btn btn-sm btn-outline-secondary me-2" [routerLink]="['/tickets/editar', ticket.id]">
                 <i class="bi bi-pencil"></i>
               </button>
               <button class="btn btn-sm btn-outline-danger">

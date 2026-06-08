@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { RouterModule } from '@angular/router'
 import { TicketService } from '../../services/ticket.service';
 import { Ticket } from '../../models/ticket.model';
 
 @Component({
   selector: 'app-ticket-list',
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule, RouterModule], 
   templateUrl: './ticket-list.html',
   styleUrl: './ticket-list.scss'
 })
