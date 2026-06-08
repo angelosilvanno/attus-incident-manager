@@ -10,8 +10,11 @@
         </div>
         
         <div class="card-body p-4">
+          <div *ngIf="feedbackMessage" [class]="isError ? 'alert alert-danger' : 'alert alert-success'" class="mb-3">
+            {{ feedbackMessage }}
+          </div>
+
           <form [formGroup]="ticketForm" (ngSubmit)="salvar()">
-            <!-- Campo de Título -->
             <div class="mb-3">
               <label class="form-label fw-bold">Título do Incidente</label>
               <input type="text" 
@@ -22,7 +25,6 @@
               <div class="invalid-feedback">O título deve ter pelo menos 5 caracteres.</div>
             </div>
 
-            <!-- Campo de Descrição -->
             <div class="mb-3">
               <label class="form-label fw-bold">Descrição Detalhada</label>
               <textarea class="form-control" 
@@ -34,7 +36,6 @@
             </div>
 
             <div class="row">
-              <!-- Campo de Prioridade -->
               <div class="col-md-6 mb-3">
                 <label class="form-label fw-bold">Prioridade</label>
                 <select class="form-select" formControlName="priority">
@@ -45,7 +46,6 @@
                 </select>
               </div>
 
-              <!-- Campo de Status (Só aparece na edição) -->
               <div class="col-md-6 mb-3" *ngIf="isEdition">
                 <label class="form-label fw-bold">Status Atual</label>
                 <select class="form-select" formControlName="status">
@@ -59,7 +59,6 @@
 
             <hr class="my-4">
 
-            <!-- Botões de Ação -->
             <div class="d-flex gap-2">
               <button type="submit" 
                       class="btn btn-primary px-4" 
