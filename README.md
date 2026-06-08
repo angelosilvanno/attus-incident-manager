@@ -1,4 +1,4 @@
-# Attus TaskFlow - Gestão de Incidentes e Diagnóstico
+# Attus TaskFlow - Gestão de Incidentes
 
 Sistema full-stack desenvolvido como prova técnica para a Attus (via Gupy), com foco na gestão de incidentes técnicos, tratamento de concorrência de dados e análise de integridade através de logs de diagnóstico.
 
