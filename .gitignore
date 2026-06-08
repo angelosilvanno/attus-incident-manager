@@ -5,3 +5,9 @@
 .idea/
 .vscode/
 bin/
+
+# Frontend
+/frontend/node_modules/
+/frontend/.angular/
+/frontend/dist/
+/frontend/.vscode/
