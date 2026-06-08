@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:15
+    container_name: attus-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: incident_db
+    ports:
+      - "5433:5432"
