@@ -45,7 +45,7 @@ docker --version
 #### 1. Clonar o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/angelosilvanno/attus-incident-manager.git
 cd attus-taskflow
 ```
 
@@ -54,7 +54,7 @@ cd attus-taskflow
 Na raiz do projeto execute:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 #### 3. Executar o backend
