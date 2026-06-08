@@ -1,19 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TicketFormComponent } from './ticket-form'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
-import { TicketForm } from './ticket-form';
-
-describe('TicketForm', () => {
-  let component: TicketForm;
-  let fixture: ComponentFixture<TicketForm>;
+describe('TicketFormComponent', () => {
+  let component: TicketFormComponent;
+  let fixture: ComponentFixture<TicketFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TicketForm],
+      imports: [
+        TicketFormComponent, 
+        ReactiveFormsModule, 
+        HttpClientTestingModule,
+        RouterModule.forRoot([])
+      ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TicketForm);
+    fixture = TestBed.createComponent(TicketFormComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
