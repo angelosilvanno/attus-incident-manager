@@ -2,7 +2,7 @@
 
 Sistema full-stack desenvolvido como prova técnica para a Attus (via Gupy), com foco na gestão de incidentes técnicos, tratamento de concorrência de dados e análise de integridade através de logs de diagnóstico.
 
-## 🔥 Introdução
+## Introdução
 
 O Attus TaskFlow foi criado para centralizar o gerenciamento de chamados técnicos, permitindo o cadastro, consulta e atualização de incidentes de forma segura e confiável.
 
